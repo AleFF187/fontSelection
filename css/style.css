@@ -1,0 +1,10 @@
+@font-face {
+    font-family: Mason_Chronicles;
+    src: url(../fonts/001_Mason_Chronicles.ttf);
+}
+
+.test {
+    font-family: Mason_Chronicles;
+    font-weight: 900;
+    font-size: 30px;
+}
