@@ -9,10 +9,17 @@
 // }
 
 let fontsList = {
-    "font_type_001": "Mason Chronicles",
-    "font_fileName_001": "001_Mason_Chronicles.ttf",
-    "font_type_002": "Mason Chronicles 2",
-    "font_fileName_002": "002_Mason_Chronicles2.ttf"
+    "font_type_001": "001_Mason_Chronicles.ttf",
+    "font_type_002": "002_Mason_Chronicles2.ttf"
 }
 
-console.log(fontsList);
+function addFontInLayout(fontType, fontName) {
+    let div = document.createElement('div');
+    div.className = fontType + ' ' + 'font_type';
+    div.innerHTML = fontName;
+    document.body.append(div);
+};
+
+for (key in fontsList) {
+    addFontInLayout(key, fontsList[key]);
+}
