@@ -1,10 +1,14 @@
 /* @font-face {
-    font-family: Mason_Chronicles;
+    font-family: 'New';
     src: url(../fonts/001_Mason_Chronicles.ttf);
-}
-
-.test {
-    font-family: Mason_Chronicles;
-    font-weight: 900;
-    font-size: 30px;
 } */
+
+.font_type {
+    width: 80vw;
+    display: flex;
+    margin: 5px auto;
+    padding: 10px 20px;
+    background-color: lightgrey;
+    font-size: 25px;
+    /* font-family: 'New'; */
+}
