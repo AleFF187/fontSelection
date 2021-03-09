@@ -18,24 +18,29 @@
         <input type="text">
         <button>Применить</button>
     </form>
-    <div class="minimized-font-numbers">
-        <button class="font-number__maximize-button">001</button>
-        <button class="font-number__maximize-button">002</button>
+    <div class="minimized_fonts">
+        <p class="minimized_fonts__legend">Эти шрифты Вы убрали из списка просмотра.</p>
+        <p class="minimized_fonts__legend">Что бы вернуть шрифт, нажмите на его номер.</p>
+        <div class="minimized_fonts__buttons">
+            <button class="maximize_all-btn minimized_fonts-btn">Показать все</button>
+            <button class="maximize-btn minimized_fonts-btn">001</button>
+            <button class="maximize-btn minimized_fonts-btn">002</button>
+        </div>
     </div>
     <div class="wrapper">
         <div class="font-card">
             <h2 class="font-card__title">Шрифт № 001</h2>
             <div class="font-card__buttons">
-                <div class="font-card__choose">Выбрать</div>
-                <div class="font-card__minimize-button">Скрыть</div>
+                <button class="font-card__choose">Выбрать</button>
+                <button class="font-card__minimize-btn">Скрыть</button>
             </div>
             <p class="font-card__text font_type_001">#1 Здесь будет текст для демонстрации.</p>
         </div>
         <div class="font-card">
             <h2 class="font-card__title">Шрифт № 002</h2>
             <div class="font-card__buttons">
-                <div class="font-card__choose">Выбрать</div>
-                <div class="font-card__minimize-button">Скрыть</div>
+                <button class="font-card__choose">Выбрать</button>
+                <button class="font-card__minimize-btn">Скрыть</button>
             </div>
             <p class="font-card__text font_type_001">#2 Здесь будет текст для демонстрации.</p>
         </div>

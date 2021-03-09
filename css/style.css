@@ -19,15 +19,21 @@ h3 {
 
 /* блок номеров свернутых шрифтов */
 
-.minimized-font-numbers {
+.minimized_fonts {
     border-top: 1px solid grey;
-    display: flex;
     margin: 10px 0 0 0;
 }
 
-.font-number__maximize-button {
-    width: 55px;
-    height: 35px;
+.minimized_fonts__legend {
+    font-size: 1.25rem;
+    margin: 5px 0 0 0;
+}
+
+.minimized_fonts__buttons {
+    display: flex;
+}
+
+.minimized_fonts-btn {
     font-size: 1rem;
     display: flex;
     align-items: center;
@@ -35,6 +41,7 @@ h3 {
     padding: 5px;
     margin: 10px 5px;
     border-radius: 10px;
+    padding: 5px 10px;
 }
 
 
@@ -75,7 +82,7 @@ h3 {
 }
 
 .font-card__choose,
-.font-card__minimize-button {
+.font-card__minimize-btn {
     font-size: 1rem;
     padding: 5px 10px;
     border: 1px solid grey;
@@ -84,7 +91,7 @@ h3 {
     margin: 0 10px 0 0;
 }
 
-.font-card__minimize-button:hover,
+.font-card__minimize-btn:hover,
 .font-card__choose:hover {
     background-color: lightgray;
     transition: background-color 0.3s;

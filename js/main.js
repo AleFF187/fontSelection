@@ -1,6 +1,8 @@
 let fontCards = document.querySelectorAll('.font-card');
-let minimizeFontBtn = document.querySelectorAll('.font-card__minimize-button');
-let maximizeFontBtn = document.querySelectorAll('.font-number__maximize-button');
+let minimizeFontBtn = document.querySelectorAll('.font-card__minimize-btn');
+let maximizeFontBtn = document.querySelectorAll('.maximize-btn');
+let maximizeAllFontBtn = document.querySelector('.maximize_all-btn');
+// console.log(maximizeAllFontBtn);
 
 
 for (let i = 0; i < minimizeFontBtn.length; i++) {
@@ -14,3 +16,12 @@ for (let i = 0; i < maximizeFontBtn.length; i++) {
         fontCards[i].classList.remove('minimize');
     })
 }
+
+
+maximizeAllFontBtn.addEventListener('click', function() {
+    for (let i = 0; i < fontCards.length; i++) {
+        fontCards[i].classList.remove('minimize');
+    }
+})
+
+// maximizeAllFontBtn.onclick = function() {
