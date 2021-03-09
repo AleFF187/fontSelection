@@ -16,10 +16,32 @@ h3 {
     margin: 0;
 }
 
+
+/* блок номеров свернутых шрифтов */
+
+.minimized-font-numbers {
+    border-top: 1px solid grey;
+    display: flex;
+    margin: 10px 0 0 0;
+}
+
+.font-number {
+    width: 55px;
+    height: 35px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin: 10px 5px;
+    border-radius: 10px;
+}
+
 .wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
+    border-top: 1px solid grey;
 }
 
 .font-card {
