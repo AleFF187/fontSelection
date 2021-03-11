@@ -10,12 +10,19 @@ let fontsListKeys = Object.keys(fontsList);
 
 // список кнопок "свернуть"
 let hideBtns = getHideButtonsList();
+// список кнопок (с номерами шрифтов) для их возврата
+let showBtns = getShowButtonsList();
 // список карточек шрифтов
 let fontCards = getFontCardsList();
 // блок вывода номеров свернутых шрифтов
 let hiddenFontsButtons = document.querySelector('.hidden-fonts__buttons');
 
+// первые запуски функций обработки нажатий
+//! зачем?
 setEventOnClick_hideButtons();
+
+// !
+console.log(showBtns)
 
 // получение списка кнопок "свернуть"
 function getHideButtonsList() {
@@ -25,8 +32,8 @@ function getHideButtonsList() {
 
 // получение списка карточек шрифтов
 function getFontCardsList() {
-    let fontCardsList = document.querySelectorAll('.font-card');
-    return fontCardsList;
+    let cardsList = document.querySelectorAll('.font-card');
+    return cardsList;
 }
 
 // обработка нажатия на кнопку "скрыть"
@@ -35,16 +42,40 @@ function setEventOnClick_hideButtons() {
         hideBtns[i].addEventListener('click', function() {
             fontCards[i].classList.add('minimize');
             let newBtn = document.createElement('button');
-            //         //! newBtn.innerHTML = '<button class="maximize-btn btn">001</button> '
+            //! newBtn.innerHTML = '<button class="maximize-btn btn">001</button> '
             newBtn.classList.add('btn__show-font');
             newBtn.classList.add('btn__common');
             newBtn.innerHTML = fontsListKeys[i];
             hiddenFontsButtons.appendChild(newBtn);
+            showBtns = getShowButtonsList();
+            //! надо устанавливать обработку на одну кнопку а не на все снова
+            //! и список кнопок постоянно растет
+            setEventOnClick_showButtons();
+            // !
+            console.log(showBtns)
         });
     }
 }
 
 
+// получение списка кнопок скрытых шрифтов
+function getShowButtonsList() {
+    let btns = document.querySelectorAll('.btn__show-font');
+    return btns;
+}
+
+// обработка нажатия на кнопку возврата конкретного шрифта (с номером)
+function setEventOnClick_showButtons() {
+    for (let i = 0; i < showBtns.length; i++) {
+        showBtns[i].addEventListener('click', function() {
+            fontCards[i].classList.remove('minimize');
+            showBtns = getShowButtonsList();
+            // !
+            console.log(showBtns)
+
+        });
+    }
+}
 // let fontCards = document.querySelectorAll('.font-card');
 // let minimizedFontsBtns = document.querySelector('.minimized_fonts__buttons');
 // let minimizeFontBtn = document.querySelectorAll('.font-card__minimize-btn');
