@@ -24,24 +24,9 @@ h3 {
 }
 
 
-/*! блок номеров свернутых шрифтов */
+/*! общие стили кнопки  */
 
-.minimized_fonts {
-    border-top: 1px solid grey;
-    margin: 10px 0 0 0;
-}
-
-.minimized_fonts__legend {
-    font-size: 1.25rem;
-    margin: 5px 0 0 0;
-}
-
-.minimized_fonts__buttons {
-    display: flex;
-    margin: 10px 0;
-}
-
-.btn {
+.btn__common {
     font-size: 1rem;
     display: flex;
     align-items: center;
@@ -53,14 +38,32 @@ h3 {
     transition: background-color 0.3s;
 }
 
-.btn:hover {
+.btn__common:hover {
     background-color: lightgray;
     transition: background-color 0.2s;
     cursor: pointer;
 }
 
 
-/*!сами  шрифты */
+/*! блок номеров скрытых шрифтов */
+
+.hided__fonts {
+    border-top: 1px solid grey;
+    margin: 10px 0 0 0;
+}
+
+.hided__fonts_legend {
+    font-size: 1.25rem;
+    margin: 5px 0 0 0;
+}
+
+.hided__fonts_buttons {
+    display: flex;
+    margin: 10px 0;
+}
+
+
+/*! сами  шрифты */
 
 .wrapper {
     display: flex;
