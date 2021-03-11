@@ -47,17 +47,17 @@ h3 {
 
 /*! блок номеров скрытых шрифтов */
 
-.hided__fonts {
+.hidden-fonts {
     border-top: 1px solid grey;
     margin: 10px 0 0 0;
 }
 
-.hided__fonts_legend {
+.hidden-fonts__legend {
     font-size: 1.25rem;
     margin: 5px 0 0 0;
 }
 
-.hided__fonts_buttons {
+.hidden-fonts__buttons {
     display: flex;
     margin: 10px 0;
 }

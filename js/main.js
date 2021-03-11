@@ -8,6 +8,41 @@ fontsList = {
 let fontsListKeys = Object.keys(fontsList);
 
 
+// список кнопок "свернуть"
+let hideBtns = getHideButtonsList();
+// список карточек шрифтов
+let fontCards = getFontCardsList();
+// блок вывода номеров свернутых шрифтов
+let hiddenFontsButtons = document.querySelector('.hidden-fonts__buttons');
+
+setEventOnClick_hideButtons();
+
+// получение списка кнопок "свернуть"
+function getHideButtonsList() {
+    let btns = document.querySelectorAll('.btn__hide');
+    return btns;
+}
+
+// получение списка карточек шрифтов
+function getFontCardsList() {
+    let fontCardsList = document.querySelectorAll('.font-card');
+    return fontCardsList;
+}
+
+// обработка нажатия на кнопку "скрыть"
+function setEventOnClick_hideButtons() {
+    for (let i = 0; i < hideBtns.length; i++) {
+        hideBtns[i].addEventListener('click', function() {
+            fontCards[i].classList.add('minimize');
+            let newBtn = document.createElement('button');
+            //         //! newBtn.innerHTML = '<button class="maximize-btn btn">001</button> '
+            newBtn.classList.add('btn__show-font');
+            newBtn.classList.add('btn__common');
+            newBtn.innerHTML = fontsListKeys[i];
+            hiddenFontsButtons.appendChild(newBtn);
+        });
+    }
+}
 
 
 // let fontCards = document.querySelectorAll('.font-card');
