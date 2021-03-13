@@ -66,11 +66,11 @@ for (let i = 0; i < hideBtns.length; i++) {
         // ! newBtn.innerHTML = '<button class="maximize-btn btn">001</button> ';
         newBtn.classList.add('btn__show-font');
         newBtn.classList.add('btn__common');
-        newBtn.innerHTML = fontsListKeys[i];
+        // оставляем только номер шрифта
+        newBtn.innerHTML = fontsListKeys[i].substr((length - 3), 3);
         hiddenFontsButtons.appendChild(newBtn);
         // добавляем кнопку в список кнопок возрата шрифта
         showBtns[i] = newBtn;
-        console.log(showBtns);
         // назначаем кнопке действие
         setEventOnClick_showButtons(i);
     });
@@ -84,7 +84,6 @@ function setEventOnClick_showButtons(i) {
     showBtns[i].addEventListener('click', function() {
         fontCards[i].classList.remove('minimize');
         hiddenFontsButtons.removeChild(showBtns[i]);
-        console.log(showBtns);
     })
 }
 
