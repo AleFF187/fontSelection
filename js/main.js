@@ -1,12 +1,15 @@
-//! объект со списком шрифтов
+// ! заменить на массив?
+// объект со списком шрифтов
 fontsList = {
     fontType001: '001_Mason_Chronicles.ttf',
     fontType002: '002_Astoria_Script_Two.ttf'
 }
 
-//! переделать
+// ! если будет массив, то это не надо
+// а надо ли это делать?
 let fontsListKeys = Object.keys(fontsList);
 
+// --------------------------------------------------------------------------------
 
 // список кнопок "свернуть"
 let hideBtns = getHideButtonsList();
@@ -17,109 +20,72 @@ let fontCards = getFontCardsList();
 // блок вывода номеров свернутых шрифтов
 let hiddenFontsButtons = document.querySelector('.hidden-fonts__buttons');
 
-// первые запуски функций обработки нажатий
-//! зачем?
-setEventOnClick_hideButtons();
+// --------------------------------------------------------------------------------
 
-// !
-console.log(showBtns)
+
+// ! а точно нужны эта функции?
+// ! а если нужна, то может быть ее сделать одной функцией, передав ей параметры?
+// во всем блоке есть приведение nodelist к массиву для возможности манипулирования им
+// https://developer.mozilla.org/ru/docs/Web/API/NodeList
+// https://overcoder.net/q/832075/%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE-%D0%BB%D0%B8-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C-%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82-%D0%B2-javascript-nodelist 
 
 // получение списка кнопок "свернуть"
 function getHideButtonsList() {
-    let btns = document.querySelectorAll('.btn__hide');
+    // let btns = document.querySelectorAll('.btn__hide');
+    let btns = Array.prototype.slice.call(document.querySelectorAll('.btn__hide'));
     return btns;
 }
 
 // получение списка карточек шрифтов
 function getFontCardsList() {
-    let cardsList = document.querySelectorAll('.font-card');
+    // let cardsList = document.querySelectorAll('.font-card');
+    let cardsList = Array.prototype.slice.call(document.querySelectorAll('.font-card'));
     return cardsList;
 }
 
-// обработка нажатия на кнопку "скрыть"
-function setEventOnClick_hideButtons() {
-    for (let i = 0; i < hideBtns.length; i++) {
-        hideBtns[i].addEventListener('click', function() {
-            fontCards[i].classList.add('minimize');
-            let newBtn = document.createElement('button');
-            //! newBtn.innerHTML = '<button class="maximize-btn btn">001</button> '
-            newBtn.classList.add('btn__show-font');
-            newBtn.classList.add('btn__common');
-            newBtn.innerHTML = fontsListKeys[i];
-            hiddenFontsButtons.appendChild(newBtn);
-            showBtns = getShowButtonsList();
-            //! надо устанавливать обработку на одну кнопку а не на все снова
-            //! и список кнопок постоянно растет
-            setEventOnClick_showButtons();
-            // !
-            console.log(showBtns)
-        });
-    }
-}
-
-
 // получение списка кнопок скрытых шрифтов
 function getShowButtonsList() {
-    let btns = document.querySelectorAll('.btn__show-font');
+    let btns = Array.prototype.slice.call(document.querySelectorAll('.btn__show-font'));
     return btns;
 }
 
-// обработка нажатия на кнопку возврата конкретного шрифта (с номером)
-function setEventOnClick_showButtons() {
-    for (let i = 0; i < showBtns.length; i++) {
-        showBtns[i].addEventListener('click', function() {
-            fontCards[i].classList.remove('minimize');
-            showBtns = getShowButtonsList();
-            // !
-            console.log(showBtns)
+// --------------------------------------------------------------------------------
 
-        });
-    }
+// обработка нажатия на кнопку "скрыть"
+
+// сделать функцией? что бы можно было вызывать динамически при добавлении шрифта
+// тогда надо делать запуск
+// setEventOnClick_hideButtons();
+
+for (let i = 0; i < hideBtns.length; i++) {
+    hideBtns[i].addEventListener('click', function() {
+        // скрываем карточку шрифта, на которой нажали кнопку "скрыть"
+        fontCards[i].classList.add('minimize');
+        // создаем и размещаем кнопку для возврата шрифта
+        let newBtn = document.createElement('button');
+        // ! newBtn.innerHTML = '<button class="maximize-btn btn">001</button> ';
+        newBtn.classList.add('btn__show-font');
+        newBtn.classList.add('btn__common');
+        newBtn.innerHTML = fontsListKeys[i];
+        hiddenFontsButtons.appendChild(newBtn);
+        // добавляем кнопку в список кнопок возрата шрифта
+        showBtns[i] = newBtn;
+        console.log(showBtns);
+        // назначаем кнопке действие
+        setEventOnClick_showButtons(i);
+    });
 }
-// let fontCards = document.querySelectorAll('.font-card');
-// let minimizedFontsBtns = document.querySelector('.minimized_fonts__buttons');
-// let minimizeFontBtn = document.querySelectorAll('.font-card__minimize-btn');
-// let maximizeFontBtns;
-// // let maximizeFontBtn = document.querySelectorAll('.maximize-btn');
-// let maximizeAllFontBtn = document.querySelector('.maximize_all-btn');
 
-// // console.log(fontsListKeys);
+// --------------------------------------------------------------------------------
 
+// обработка нажатия на кнопку возврата шрифта
 
-// // обработка нажатия кнопки "скрыть" на образце шрифта
-// for (let i = 0; i < minimizeFontBtn.length; i++) {
-//     minimizeFontBtn[i].addEventListener('click', function() {
-//         fontCards[i].classList.add('minimize');
-//         let newBtn = document.createElement('button');
-//         //! newBtn.innerHTML = '<button class="maximize-btn btn">001</button> '
-//         newBtn.classList.add('maximize-btn');
-//         newBtn.classList.add('btn');
-//         newBtn.innerHTML = fontsListKeys[i];
-//         minimizedFontsBtns.appendChild(newBtn);
-//         maximizeFontButtonsEvent();
-//     })
-// }
+function setEventOnClick_showButtons(i) {
+    showBtns[i].addEventListener('click', function() {
+        fontCards[i].classList.remove('minimize');
+        hiddenFontsButtons.removeChild(showBtns[i]);
+        console.log(showBtns);
+    })
+}
 
-// function getMaximizeFontButtonsList() {
-//     // создаем список кнопок возврата шрифта в видимые
-//     maximizeFontBtns = document.querySelectorAll('.maximize-btn');
-// }
-
-
-// function maximizeFontButtonsEvent() {
-//     // добавляем кнопкам возврата (шрифта в видимые шрифты) обработку нажатия
-//     getMaximizeFontButtonsList();
-//     for (let i = 0; i < maximizeFontBtns.length; i++) {
-//         maximizeFontBtns[i].addEventListener('click', function() {
-//             fontCards[i].classList.remove('minimize');
-//         })
-//     }
-//     console.log(maximizeFontBtns);
-// }
-
-// // обработка нажатия кнопки "показать все" и возврат всех шрифтов  на экран
-// maximizeAllFontBtn.addEventListener('click', function() {
-//     for (let i = 0; i < fontCards.length; i++) {
-//         fontCards[i].classList.remove('minimize');
-//     }
-// })
+// --------------------------------------------------------------------------------
