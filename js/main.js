@@ -15,6 +15,8 @@ let fontsListKeys = Object.keys(fontsList);
 let hideBtns = getHideButtonsList();
 // список кнопок (с номерами шрифтов) для их возврата
 let showBtns = getShowButtonsList();
+// кнопка "показать все"
+let showAllBtn = document.querySelector('.btn__show-all');
 // список карточек шрифтов
 let fontCards = getFontCardsList();
 // блок вывода номеров свернутых шрифтов
@@ -85,6 +87,22 @@ function setEventOnClick_showButtons(i) {
         fontCards[i].classList.remove('minimize');
         hiddenFontsButtons.removeChild(showBtns[i]);
     })
+}
+
+// --------------------------------------------------------------------------------
+
+// обработка нажатия на кнопку "показать все"
+
+showAllBtn.onclick = function() {
+    for (let i = 0; i < fontCards.length; i++) {
+        if (showBtns[i] != undefined) {
+            console.log(i, showBtns);
+            fontCards[i].classList.remove('minimize');
+            // if (showBtns[i] != undefined) {
+            hiddenFontsButtons.removeChild(showBtns[i]);
+            // }
+        }
+    }
 }
 
 // --------------------------------------------------------------------------------
