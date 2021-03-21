@@ -11,12 +11,12 @@
 </head>
 
 <body>
-    <div class="top_form">
-        <button>Оставить выбранные</button>
-        <button>Сброс</button>
-        <form action="post">
-            <input type="text">
-            <button>Применить</button>
+    <div class="form__wrapper">
+        <form class="form">
+            <label class="form__label"> Введите текст:</label>
+            <input class="form__input" type="text">
+            <button class="form__button_submit btn__common" type="submit">Применить</button>
+            <button class="form__button_clear btn__common" type="reset">Х</button>
         </form>
     </div>
 
@@ -32,7 +32,7 @@
         <div class="font-card">
             <h2 class="font-card__title">Шрифт № 001</h2>
             <div class="font-card__buttons btn">
-                <button class="btn__choose btn__common">Выбрать</button>
+                <!-- <button class="btn__choose btn__common">Выбрать</button> -->
                 <button class="btn__hide btn__common">Скрыть</button>
             </div>
             <p class="font-card__text font_type_001">#1 Здесь будет текст для демонстрации.</p>
@@ -40,7 +40,7 @@
         <div class="font-card">
             <h2 class="font-card__title">Шрифт № 002</h2>
             <div class="font-card__buttons btn">
-                <button class="btn__choose btn__common">Выбрать</button>
+                <!-- <button class="btn__choose btn__common">Выбрать</button> -->
                 <button class="btn__hide btn__common">Скрыть</button>
             </div>
             <p class="font-card__text font_type_002">#2 Здесь будет текст для демонстрации.</p>

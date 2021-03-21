@@ -5,6 +5,7 @@
 
 body {
     font-size: 10px;
+    padding: 0 10px;
 }
 
 p,
@@ -42,6 +43,52 @@ h3 {
     background-color: lightgray;
     transition: background-color 0.2s;
     cursor: pointer;
+}
+
+
+/*! форма ввода текста */
+
+.form__wrapper {
+    margin: 10px 0;
+    position: relative;
+}
+
+.form {
+    display: flex;
+    padding: 0.65rem 0;
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    font-size: 1rem;
+    background-color: white;
+    padding: 0 0.5rem;
+}
+
+.form__input {
+    height: 2rem;
+    max-width: 80%;
+    min-width: 225px;
+    width: 100%;
+    margin-right: 15px;
+    padding: 0.2rem 1rem;
+}
+
+.form__button_clear {
+    width: 1.55rem;
+    height: 1.55rem;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    /* ! todo1 */
+    /* ! разобраться с адаптивом */
+    /* ! todo1*/
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 80%;
 }
 
 

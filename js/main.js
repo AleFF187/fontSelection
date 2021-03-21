@@ -19,8 +19,13 @@ let showBtns = getShowButtonsList();
 let showAllBtn = document.querySelector('.btn__show-all');
 // список карточек шрифтов
 let fontCards = getFontCardsList();
+// список полей вывода образцов шрифтов
+let FontExample = getFontExampleList();
 // блок вывода номеров свернутых шрифтов
 let hiddenFontsButtons = document.querySelector('.hidden-fonts__buttons');
+
+const form = document.querySelector('.form');
+const formInput = document.querySelector('.form__input');
 
 // --------------------------------------------------------------------------------
 
@@ -33,22 +38,26 @@ let hiddenFontsButtons = document.querySelector('.hidden-fonts__buttons');
 
 // получение списка кнопок "свернуть"
 function getHideButtonsList() {
-    // let btns = document.querySelectorAll('.btn__hide');
-    let btns = Array.prototype.slice.call(document.querySelectorAll('.btn__hide'));
+    let btns = Array.from(document.querySelectorAll('.btn__hide'));
     return btns;
 }
 
 // получение списка карточек шрифтов
 function getFontCardsList() {
-    // let cardsList = document.querySelectorAll('.font-card');
-    let cardsList = Array.prototype.slice.call(document.querySelectorAll('.font-card'));
+    let cardsList = Array.from(document.querySelectorAll('.font-card'));
     return cardsList;
 }
 
 // получение списка кнопок скрытых шрифтов
 function getShowButtonsList() {
-    let btns = Array.prototype.slice.call(document.querySelectorAll('.btn__show-font'));
+    let btns = Array.from(document.querySelectorAll('.btn__show-font'));
     return btns;
+}
+
+// получение списка полей вывода шрифтов
+function getFontExampleList() {
+    let fontExample = Array.from(document.querySelectorAll('.font-card__text'));
+    return fontExample;
 }
 
 // --------------------------------------------------------------------------------
@@ -98,11 +107,22 @@ showAllBtn.onclick = function() {
         if (showBtns[i] != undefined) {
             console.log(i, showBtns);
             fontCards[i].classList.remove('minimize');
-            // if (showBtns[i] != undefined) {
+            //! if (showBtns[i] != undefined) {
             hiddenFontsButtons.removeChild(showBtns[i]);
             // }
         }
     }
 }
+
+// --------------------------------------------------------------------------------
+
+// передача текста в карточки шрифтов
+
+form.addEventListener('submit', function(e) {
+    for (let i = 0; i < fontCards.length; i++) {
+        FontExample[i].innerHTML = formInput.value;
+    }
+    e.preventDefault();
+});
 
 // --------------------------------------------------------------------------------
