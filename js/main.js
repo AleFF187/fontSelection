@@ -2,7 +2,8 @@
 // объект со списком шрифтов
 fontsList = {
     fontType001: '001_Mason_Chronicles.ttf',
-    fontType002: '002_Astoria_Script_Two.ttf'
+    fontType002: '002_Astoria_Script_Two.ttf',
+    fontType003: '003_Cyrillic_Old.otf'
 }
 
 // ! если будет массив, то это не надо
@@ -77,9 +78,11 @@ for (let i = 0; i < hideBtns.length; i++) {
         // ! newBtn.innerHTML = '<button class="maximize-btn btn">001</button> ';
         newBtn.classList.add('btn__show-font');
         newBtn.classList.add('btn__common');
+        console.log(newBtn);
         // оставляем только номер шрифта
         newBtn.innerHTML = fontsListKeys[i].substr((length - 3), 3);
         hiddenFontsButtons.appendChild(newBtn);
+        console.log(newBtn);
         // добавляем кнопку в список кнопок возрата шрифта
         showBtns[i] = newBtn;
         // назначаем кнопке действие
