@@ -71,20 +71,29 @@ h3 {
     padding: 0.2rem 1rem;
 }
 
-.form__button_clear {
+
+/* .form__button_clear {
     width: 1.55rem;
     height: 1.55rem;
     border: 1px solid lightgray;
     border-radius: 50%;
     font-size: 0.8rem;
-    /* ! todo1 */
-    /* ! разобраться с адаптивом */
-    /* ! todo1*/
+    */
+
+
+/*
+    ! todo1
+    ! разобраться с адаптивом
+    ! todo1
+    */
+
+
+/*
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 80%;
-}
+} */
 
 
 /* -------------------------------------------------------------------------------- */
@@ -171,4 +180,202 @@ h3 {
 
 .font_type_003 {
     font-family: 'Cyrillic_Old';
+}
+
+@font-face {
+    font-family: 'Admiral_Gotisch';
+    src: url(../fonts/004_Admiral_Gotisch.ttf);
+}
+
+.font_type_004 {
+    font-family: 'Admiral_Gotisch';
+}
+
+@font-face {
+    font-family: 'Ampir_Deco';
+    src: url(../fonts/005_Ampir_Deco.ttf);
+}
+
+.font_type_005 {
+    font-family: 'Ampir_Deco';
+}
+
+@font-face {
+    font-family: 'BorjomiC';
+    src: url(../fonts/006_BorjomiC.otf);
+}
+
+.font_type_006 {
+    font-family: 'BorjomiC';
+}
+
+@font-face {
+    font-family: 'Antique_Titul';
+    src: url(../fonts/007_Antique_Titul.ttf);
+}
+
+.font_type_007 {
+    font-family: 'Antique_Titul';
+}
+
+@font-face {
+    font-family: 'Arial';
+    src: url(../fonts/008_Arial.ttf);
+}
+
+.font_type_008 {
+    font-family: 'Arial';
+}
+
+@font-face {
+    font-family: 'Arial_Bold';
+    src: url(../fonts/009_Arial_Bold.ttf);
+}
+
+.font_type_009 {
+    font-family: 'Arial_Bold';
+}
+
+@font-face {
+    font-family: 'Arial_Bold_Italic';
+    src: url(../fonts/010_Arial_Bold_Italic.ttf);
+}
+
+.font_type_010 {
+    font-family: 'Arial_Bold_Italic';
+}
+
+@font-face {
+    font-family: 'Arial_Italic';
+    src: url(../fonts/011_Arial_Italic.ttf);
+}
+
+.font_type_011 {
+    font-family: 'Arial_Italic';
+}
+
+@font-face {
+    font-family: 'Arial_Narrow';
+    src: url(../fonts/012_Arial_Narrow.ttf);
+}
+
+.font_type_012 {
+    font-family: 'Arial_Narrow';
+}
+
+@font-face {
+    font-family: 'Arial_Narrow_Bold';
+    src: url(../fonts/013_Arial_Narrow_Bold.ttf);
+}
+
+.font_type_013 {
+    font-family: 'Arial_Narrow_Bold';
+}
+
+@font-face {
+    font-family: 'Arial_Narrow_Bold_Italic';
+    src: url(../fonts/014_Arial_Narrow_Bold_Italic.ttf);
+}
+
+.font_type_014 {
+    font-family: 'Arial_Narrow_Bold_Italic';
+}
+
+@font-face {
+    font-family: 'Arial_Narrow_Italic';
+    src: url(../fonts/015_Arial_Narrow_Italic.ttf);
+}
+
+.font_type_015 {
+    font-family: 'Arial_Narrow_Italic';
+}
+
+@font-face {
+    font-family: 'Carmen';
+    src: url(../fonts/016_Carmen.ttf);
+}
+
+.font_type_016 {
+    font-family: 'Carmen';
+}
+
+@font-face {
+    font-family: 'Chomsky';
+    src: url(../fonts/017_Chomsky.otf);
+}
+
+.font_type_017 {
+    font-family: 'Chomsky';
+}
+
+@font-face {
+    font-family: 'Majestic';
+    src: url(../fonts/018_Majestic.ttf);
+}
+
+.font_type_018 {
+    font-family: 'Majestic';
+}
+
+@font-face {
+    font-family: 'Minion_Pro_Cond';
+    src: url(../fonts/019_Minion_Pro_Cond.otf);
+}
+
+.font_type_019 {
+    font-family: 'Minion_Pro_Cond';
+}
+
+@font-face {
+    font-family: 'Heinrich_Script';
+    src: url(../fonts/020_Heinrich_Script.ttf);
+}
+
+.font_type_020 {
+    font-family: 'Heinrich_Script';
+}
+
+@font-face {
+    font-family: 'Menuet_Script';
+    src: url(../fonts/021_Menuet_Script.ttf);
+}
+
+.font_type_021 {
+    font-family: 'Menuet_Script';
+}
+
+@font-face {
+    font-family: 'Times_New_Roman';
+    src: url(../fonts/022_Times_New_Roman.ttf);
+}
+
+.font_type_022 {
+    font-family: 'Times_New_Roman';
+}
+
+@font-face {
+    font-family: 'Times_New_Roman_Bold';
+    src: url(../fonts/023_Times_New_Roman_Bold.ttf);
+}
+
+.font_type_023 {
+    font-family: 'Times_New_Roman_Bold';
+}
+
+@font-face {
+    font-family: 'Times_New_Roman_Bold_Italic';
+    src: url(../fonts/024_Times_New_Roman_Bold_Italic.ttf);
+}
+
+.font_type_024 {
+    font-family: 'Times_New_Roman_Bold_Italic';
+}
+
+@font-face {
+    font-family: 'Times_New_Roman_Italic';
+    src: url(../fonts/025_Times_New_Roman_Italic.ttf);
+}
+
+.font_type_025 {
+    font-family: 'Times_New_Roman_Italic';
 }

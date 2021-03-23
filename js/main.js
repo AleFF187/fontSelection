@@ -3,7 +3,29 @@
 fontsList = {
     fontType001: '001_Mason_Chronicles.ttf',
     fontType002: '002_Astoria_Script_Two.ttf',
-    fontType003: '003_Cyrillic_Old.otf'
+    fontType003: '003_Cyrillic_Old.otf',
+    fontType004: '004_Admiral_Gotisch.ttf',
+    fontType005: '005_Ampir_Deco.ttf',
+    fontType006: '006_BorjomiC.otf',
+    fontType007: '007_Antique_Titul.ttf',
+    fontType008: '008_Arial.ttf',
+    fontType009: '009_Arial_Bold.ttf',
+    fontType010: '010_Arial_Bold_Italic.ttf',
+    fontType011: '011_Arial_Italic.ttf',
+    fontType012: '012_Arial_Narrow.ttf',
+    fontType013: '013_Arial_Narrow_Bold.ttf',
+    fontType014: '014_Arial_Narrow_Bold_Italic.ttf',
+    fontType015: '015_Arial_Narrow_Italic.ttf',
+    fontType016: '016_Carmen.ttf',
+    fontType017: '017_Chomsky.otf',
+    fontType018: '018_Majestic.ttf',
+    fontType019: '019_Minion_Pro_Cond.otf',
+    fontType020: '020_Heinrich_Script.ttf',
+    fontType021: '021_Menuet_Script.ttf',
+    fontType022: '022_Times_New_Roman.ttf',
+    fontType023: '023_Times_New_Roman_Bold.ttf',
+    fontType024: '024_Times_New_Roman_Bold_Italic.ttf',
+    fontType025: '025_Times_New_Roman_Italic.ttf',
 }
 
 // ! если будет массив, то это не надо
